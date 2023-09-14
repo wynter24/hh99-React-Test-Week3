@@ -8,7 +8,7 @@ import { waitTwoSeconds } from '../../utils';
 export const __addToDo = createAsyncThunk(
   '__addToDo',
   async (payload, thunkAPI) => {
-    // await waitTwoSeconds();
+    await waitTwoSeconds();
     thunkAPI.dispatch(addTodo(payload));
   }
 );
@@ -16,7 +16,7 @@ export const __addToDo = createAsyncThunk(
 export const __deleteTodo = createAsyncThunk(
   '__deleteToDo',
   async (payload, thunkAPI) => {
-    // await waitTwoSeconds();
+    await waitTwoSeconds();
     thunkAPI.dispatch(deleteTodo(payload));
   }
 );
@@ -37,6 +37,8 @@ const todosSlice = createSlice({
       // };
     },
     deleteTodo: (state, action) => {
+      // console.log(state.list.map((item,i)=>console.log(`item.id ${i}: `,item.id)))
+      // console.log("action.payload : ",action.payload);
       return state.list.filter((item) => item.id !== action.payload);
     },
   },

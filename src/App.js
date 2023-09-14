@@ -65,7 +65,6 @@ function App() {
             placeholder="할 일 내용"
             onChange={onChangeBody}
           />
-
           <Button onClick={()=>{onAddTodo(); resetInputs();}}>+ 추가하기</Button>
         </InputContainer>
         <TodoListContainer>
